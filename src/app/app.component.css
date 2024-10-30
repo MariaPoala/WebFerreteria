@@ -1,0 +1,17 @@
+/* styles.css */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  app-header, app-footer {
+    width: 100%;
+  }
+  
+  app-main {
+    min-height: calc(100vh - 150px); /* Ajusta el tamaño según tus necesidades */
+    padding: 1rem;
+  }
+  
