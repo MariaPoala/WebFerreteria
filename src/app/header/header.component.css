@@ -1,0 +1,12 @@
+.navbar {
+    font-size: 1.1rem;
+  }
+  
+  .nav-link {
+    color: white !important;
+  }
+  
+  .nav-link:hover {
+    color: #ffcccb !important; /* Cambia el color al pasar el cursor */
+  }
+  
