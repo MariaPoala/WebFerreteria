@@ -1,0 +1,35 @@
+.carousel-inner {
+    height: 400px;
+    display: flex;
+}
+
+.carousel-image {
+    width: 100%;
+    /* Ancho completo del contenedor */
+    height: 100%;
+    /* Alto completo del contenedor */
+    object-fit: cover;
+    /* Recorta la imagen para que ocupe todo el espacio */
+}
+
+/* .carousel-inner {
+    display: flex; 
+  }
+   */
+.carousel-item {
+    display: flex;
+    /* Cada item del carrusel es un flex container */
+    overflow: hidden;
+    /* Asegúrate de ocultar contenido desbordado */
+    flex-direction: row;
+    /* Direccion horizontal para los elementos flex */
+}
+
+.card {
+    flex: 0 0 auto;
+    /* Impide que las tarjetas se expandan o contraigan */
+    width: 300px;
+    /* Ancho fijo para cada tarjeta */
+    margin-right: 10px;
+    /* Espaciado entre tarjetas */
+}

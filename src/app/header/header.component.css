@@ -1,12 +1,100 @@
 .navbar {
-    font-size: 1.1rem;
-  }
-  
-  .nav-link {
-    color: white !important;
-  }
-  
-  .nav-link:hover {
-    color: #ffcccb !important; /* Cambia el color al pasar el cursor */
-  }
-  
+  font-size: 1.1rem;
+  display: block;
+}
+
+.nav-link {
+  color: rgb(204, 58, 58) !important;
+}
+
+.nav-link:hover {
+  color: #e28a88 !important;
+  /* Cambia el color al pasar el cursor */
+}
+
+
+
+.dropdown-menu {
+  width: 900px;
+  /* Ancho de 80 píxeles */
+  height: 150px;
+  /* Alto de 20 píxeles */
+  background-color: blue;
+  /* Color de fondo azul */
+  left: 50%;
+  /* Posicionar el menú a la mitad del contenedor */
+  transform: translateX(-50%);
+  /* Desplazar el menú hacia la izquierda por la mitad de su ancho */
+  text-align: center;
+  /* Centrar el texto dentro del menú */
+}
+
+.dropdown-item {
+  color: white;
+  /* Color del texto en blanco para contraste */
+}
+
+/* Opcional: Ajustar el padding para que el contenido se vea bien */
+.dropdown-item {
+  padding: 5px 10px;
+  /* Ajusta el padding según sea necesario */
+}
+
+.custom-div {
+  width: 100%;
+  /* Ancho de 10 píxeles */
+  height: 30px;
+  /* Altura completa de la ventana */
+  background-color: rgb(229, 229, 238);
+  /* Color de fondo azul */
+  position: fixed;
+  /* Posición fija para que abarque toda la altura */
+
+  /* Espaciado interno */
+
+  /* Usar flexbox para la alineación */
+  justify-content: center;
+  /* Centrar el contenido horizontalmente */
+  align-items: center;
+  /* Centrar el contenido verticalmente */
+
+}
+
+.custom-div a {
+  margin: 0 10px;
+  /* Espacio entre los enlaces */
+}
+
+.separator {
+  border-top: 1px solid #000;
+  /* Línea de separación */
+  margin: 0;
+  /* Sin margen */
+}
+
+.navbar {
+  text-align: center;
+  /* Centrar el texto en el navbar */
+}
+
+.contenedor_principal {
+  padding-top: 30px;
+  width: 100%;
+  display: block;
+  /* Hacer que el contenedor no use flex */
+  text-align: center;
+}
+
+.navbar-nav {
+  justify-content: center;
+  /* Centrar los elementos dentro del ul */
+  display: flex;
+  /* Asegurarse de que los elementos estén en línea */
+  padding-left: 0;
+  /* Para eliminar padding por defecto */
+}
+
+.nav-item {
+  margin-right: 15px;
+  /* Espacio entre los elementos */
+}
