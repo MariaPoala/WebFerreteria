@@ -8,6 +8,7 @@ html, body {
   
   app-header, app-footer {
     width: 100%;
+    background-color: #1093E6;
   }
   
   app-main {

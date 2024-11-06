@@ -1,0 +1,44 @@
+<div class="row">
+    <!-- Columna para las categorías -->
+    <div class="col-sm-4">
+      <div *ngFor="let categoria of categorias">
+        <!-- Botón para cada categoría -->
+        <button class="btn btn-primary" (click)="seleccionarCategoria(categoria)">
+          {{ categoria.nombre }}
+        </button>
+      
+        <!-- Contenedor de productos que se muestra solo si la categoría está seleccionada -->
+        <div *ngIf="categoriaSeleccionada?.id === categoria.id">
+          <h5>Productos de {{ categoria.nombre }}:</h5>
+          <ul>
+            <li *ngFor="let producto of obtenerProductosPorCategoria(categoria)">
+              <a href="#">{{ producto.nombre }}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Columna para los productos de la categoría seleccionada (al costado) -->
+    <div class="col-sm-8" *ngIf="categoriaSeleccionada">
+      <h4>Productos de {{ categoriaSeleccionada.nombre }}</h4>
+      <ul>
+        <li *ngFor="let producto of obtenerProductosPorCategoria(categoriaSeleccionada)">
+          <a href="#">{{ producto.nombre }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Segunda sección que muestra los productos seleccionados -->
+  <div class="row mt-4">
+    <div class="col-12" *ngIf="categoriaSeleccionada">
+      <h4>Productos de {{ categoriaSeleccionada?.nombre }} (segunda vista)</h4>
+      <ul>
+        <li *ngFor="let producto of obtenerProductosPorCategoria(categoriaSeleccionada)">
+          <a href="#">{{ producto.nombre }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  

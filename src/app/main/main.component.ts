@@ -11,9 +11,9 @@ import { isPlatformBrowser, NgForOf } from '@angular/common';
 export class MainComponent {
   currentIndex = 0;
   slides = [
-    { img: 'https://i.blogs.es/0ca9a6/aa/1366_2000.jpeg' },
-    { img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR__zJOFi3ef7eGRIlVWo2DKdUXKrCq8dBwtQ&s' },
-    { img: 'https://i.pinimg.com/474x/d7/47/f7/d747f70ce52b0df12c1542b280fa8d76.jpg' }
+    { img: 'https://d100mj7v0l85u5.cloudfront.net/s3fs-public/2023-04/funciones-del-jefe-de-compras-6.png' },
+    { img: 'https://d100mj7v0l85u5.cloudfront.net/s3fs-public/2023-03/que-vender-en-una-ferreteria.png' },
+    { img: 'https://gcf.mx/assets/images/slide1.png' }
   ];
   totalSlides = this.slides.length;
   

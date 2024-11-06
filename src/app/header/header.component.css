@@ -1,6 +1,12 @@
 .navbar {
   font-size: 1.1rem;
   display: block;
+  background-color: #6CDDE6;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .nav-link {
@@ -17,7 +23,7 @@
 .dropdown-menu {
   width: 900px;
   /* Ancho de 80 píxeles */
-  height: 150px;
+  height: 200px;
   /* Alto de 20 píxeles */
   background-color: blue;
   /* Color de fondo azul */
@@ -45,7 +51,7 @@
   /* Ancho de 10 píxeles */
   height: 30px;
   /* Altura completa de la ventana */
-  background-color: rgb(229, 229, 238);
+  background-color: #6CDDE6;
   /* Color de fondo azul */
   position: fixed;
   /* Posición fija para que abarque toda la altura */

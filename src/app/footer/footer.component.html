@@ -1,4 +1,4 @@
-<footer class="bg-light text-dark mt-5">
+<footer class="footer text-dark mt-5">
   <div class="container">
       <div class="row">
           <!-- Primera columna: Logo y descripción -->
@@ -19,10 +19,7 @@
           <div class="col-md-3 border-end">
               <h5>Categorías</h5>
               <ul class="list-unstyled">
-                  <li><a href="#">Categoría 1</a></li>
-                  <li><a href="#">Categoría 2</a></li>
-                  <li><a href="#">Categoría 3</a></li>
-                  <li><a href="#">Categoría 4</a></li>
+                  <li *ngFor="let categoria of categorias"><a href="#">{{categoria.nombre}}</a></li>
               </ul>
           </div>
           <!-- Cuarta columna: Síguenos -->
