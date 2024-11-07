@@ -1,7 +1,7 @@
 import { NgForOf } from '@angular/common';
 import { Component } from '@angular/core';
 import { CategoriaService } from '../categoria.service';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { ProductosService } from '../productos.service';
 
 @Component({
@@ -12,29 +12,45 @@ import { ProductosService } from '../productos.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  // categorias: any[] = [];
-
-  // constructor(private categoriaService: CategoriaService) {}
-
-  // ngOnInit() {
-  //   this.categorias = this.categoriaService.getCategorias();
-  // }
-
-  categorias: any;
+  categorias: any[] = [];
   productos: any[] = [];
+  categoriaSeleccionada: any = null;
 
   constructor(
     private route: ActivatedRoute,
     private categoriaService: CategoriaService,
-    private productosService: ProductosService
+    private productosService: ProductosService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
-    // Obtén el id de la categoría desde la URL
-    const categoriaId = +this.route.snapshot.paramMap.get('id')!;
+    // Cargar categorías y productos desde los servicios
+    this.categorias = this.categoriaService.getCategorias();
+    this.productos = this.productosService.getProductos();
+
+    // Suscribirse a los cambios en los parámetros de la URL
+    this.route.paramMap.subscribe(params => {
+      const categoriaId = +params.get('id')!;
+      this.categoriaSeleccionada = this.categorias.find(categoria => categoria.id === categoriaId);
+
     
-    // Busca la categoría y sus productos
-    this.categorias = this.categoriaService.getCategorias().find(c => c.id === categoriaId);
-    this.productos = this.productosService.getProductos().filter(p => p.categoria_id === categoriaId);
+    });
+    
+  }
+
+  seleccionarCategoria(categoria: any): void {
+    this.categoriaSeleccionada = categoria;
+    
+  }
+
+  obtenerProductosPorCategoria(categoria: any): any[] {
+    return this.productos.filter(p => p.categoria_id === categoria.id);
+  }
+
+  navegarYSeleccionarCategoria(categoria: any): void {
+    // Seleccionar la categoría y navegar a su ruta
+    this.seleccionarCategoria(categoria);
+    this.router.navigate(['/productos/categoria', categoria.id]);
+
   }
 }

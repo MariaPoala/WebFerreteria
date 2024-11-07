@@ -17,7 +17,7 @@
           <a class="nav-link active" aria-current="page" href="#">INICIO</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/productos">NOSOTROS</a>
+          <a class="nav-link" href="/nosotros">NOSOTROS</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -27,18 +27,19 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <h3>Categorías:</h3>
             <div class="row">
-              <div class="col-3" *ngFor="let categoria of categorias">
+              <div class="col-3" *ngFor="let categori of categorias">
                 <ul class="list-unstyled">
                   <li class="bg:#0BE6AB">
-                    <!-- Agregar el routerLink para navegar a la categoría -->
-                    <a [routerLink]="['/categoria', categoria.id]">
-                      {{ categoria.nombre }}
+                    <!-- Agregar el routerLink y (click) para seleccionar la categoría y navegar -->
+                    <a [routerLink]="['/productos/categoria', categori.id]" (click)="navegarYSeleccionarCategoria(categori)">
+                      {{ categori.nombre }}
                     </a>
                   </li>
                 </ul>
               </div>
             </div>
           </ul>
+          
           
         </li>
 
