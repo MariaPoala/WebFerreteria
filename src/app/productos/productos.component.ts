@@ -29,46 +29,48 @@ export class ProductosComponent {
   ngOnInit(): void {
     this.categorias = this.categoriaService.getCategorias();
     this.productos = this.productosService.getProductos();
-    // this.productoSeleccionado= null;
+
+    // Verificar si hay una categoría seleccionada desde la ruta
     this.route.paramMap.subscribe(params => {
       const categoriaId = +params.get('id')!;
-
       if (categoriaId) {
         this.categoriaSeleccionada = this.categorias.find(categoria => categoria.id === categoriaId);
-
+        this.productosFiltrados = this.obtenerProductosPorCategoria(this.categoriaSeleccionada);
       }
     });
   }
+
   // Filtrar los productos cuando se hace click en el botón Filtrar
   filtrarProductos() {
-    console.log("texto-filtrado" + this.searchText)
     if (this.searchText) {
       this.productosFiltrados = this.productos.filter(producto =>
         producto.nombre.toLowerCase().includes(this.searchText.toLowerCase())
       );
     } else {
-      this.productosFiltrados = [...this.productos]; // Si no hay texto, mostrar todos
+      if (this.categoriaSeleccionada) {
+        this.productosFiltrados = this.obtenerProductosPorCategoria(this.categoriaSeleccionada);
+      } else {
+        this.productosFiltrados = [...this.productos]; // Si no hay texto, mostrar todos los productos
+      }
     }
   }
 
-  // Seleccionar la categoría
+  // Seleccionar una categoría
   seleccionarCategoria(categoria: any) {
     this.categoriaSeleccionada = categoria;
-    this.productosFiltrados = this.productos.filter(producto =>
-      producto.categoria_id === categoria.id
-    );
+    this.productosFiltrados = this.obtenerProductosPorCategoria(categoria);
+    this.searchText = ''; // Limpiar el campo de búsqueda al seleccionar una categoría
   }
 
   // Obtener productos por categoría
   obtenerProductosPorCategoria(categoria: any) {
-    return this.productos.filter(producto =>
-      producto.categoria_id === categoria.id
-    );
+    return this.productos.filter(producto => producto.categoria_id === categoria.id);
   }
 
   // Seleccionar un producto para ver los detalles
   seleccionarProducto(producto: any) {
     this.productoSeleccionado = producto;
+    this.searchText = ''; // Limpiar el campo de búsqueda al seleccionar un producto
   }
 
   get filteredProducts() {
@@ -79,17 +81,4 @@ export class ProductosComponent {
       producto.nombre.toLowerCase().includes(this.searchText.toLowerCase())
     );
   }
-  // seleccionarCategoria(categoria: any) {
-  //   this.categoriaSeleccionada = this.categoriaSeleccionada?.id === categoria.id ? null : categoria;
-
-  // }
-
-  // obtenerProductosPorCategoria(categoria: any) {
-  //   return this.productos.filter(producto => producto.categoria_id === categoria.id);
-  // }
-
-  // seleccionarProducto(producto: any) {
-  //   this.productoSeleccionado = producto;
-  // }
-
 }

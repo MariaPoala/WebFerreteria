@@ -2,14 +2,17 @@
   <!-- Columna para las categorías -->
   <div class="col-sm-4">
     <p>Filtrar por Producto:</p>
-    <input class="form-control" [(ngModel)]="searchText" type="text" placeholder="Buscar" />
-    <div *ngIf="searchText && filteredProducts.length > 0" class="search-results">
+    <!-- Campo de búsqueda -->
+    <input class="form-control" [(ngModel)]="searchText" type="text" placeholder="Buscar"
+      (input)="filtrarProductos()" />
+    <!-- Lista de productos filtrados -->
+    <div *ngIf="searchText && productosFiltrados.length > 0" class="search-results">
       <ul>
-        <li *ngFor="let producto of filteredProducts">{{ producto.nombre }}</li>
+        <li *ngFor="let producto of productosFiltrados" (click)="seleccionarProducto(producto)">
+          {{ producto.nombre }}
+        </li>
       </ul>
     </div>
-
-    <button (click)="filtrarProductos()">Filtrar</button>
 
     <div *ngFor="let categoria of categorias">
       <button class="btn btn-primary" (click)="seleccionarCategoria(categoria)">
