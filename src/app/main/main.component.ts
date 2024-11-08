@@ -2,6 +2,11 @@ import { Component, AfterViewInit, Inject, PLATFORM_ID, Renderer2 } from '@angul
 import { isPlatformBrowser, NgForOf } from '@angular/common';
 import Swiper from 'swiper';
 
+interface Card {
+  id: number;
+  title: string;
+  description: string;
+}
 
 @Component({
   selector: 'app-main',
@@ -88,4 +93,27 @@ export class MainComponent {
 
   ;
 
+
+  cards: Card[] = [
+    { id: 1, title: 'Card 1', description: 'Description 1' },
+    { id: 2, title: 'Card 2', description: 'Description 2' },
+    { id: 3, title: 'Card 3', description: 'Description 3' },
+    { id: 4, title: 'Card 4', description: 'Description 4' },
+    { id: 5, title: 'Card 5', description: 'Description 5' },
+    { id: 6, title: 'Card 6', description: 'Description 6' },
+  ];
+
+  currentIndexcat = 0;
+
+  handleNext() {
+    this.currentIndexcat = (this.currentIndexcat + 1) % this.cards.length;
+  }
+
+  handlePrev() {
+    this.currentIndexcat = (this.currentIndexcat - 1 + this.cards.length) % this.cards.length;
+  }
+
+  getVisibleCards() {
+    return this.cards.slice(this.currentIndexcat, this.currentIndexcat + 3);
+  }
 }
