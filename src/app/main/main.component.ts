@@ -114,6 +114,6 @@ export class MainComponent {
   }
 
   getVisibleCards() {
-    return this.cards.slice(this.currentIndexcat, this.currentIndexcat + 3);
+    return this.cards.slice(this.currentIndexcat, this.currentIndexcat + 4);
   }
 }

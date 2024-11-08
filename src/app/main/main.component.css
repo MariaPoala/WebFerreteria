@@ -326,15 +326,17 @@
 
 
 .cat-carousel-container {
-  padding-top: 10%;
+  padding-top: 2%;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: aqua;
+  
 }
 
 .relative {
   width: 100%;
-  max-width: 600px; /* Ajusta el ancho máximo según prefieras */
+  max-width: 80%; /* Ajusta el ancho máximo según prefieras */
 }
 
 .cat-nav-button {
