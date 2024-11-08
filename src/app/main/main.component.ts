@@ -1,6 +1,7 @@
-import { Component, AfterViewInit, Inject, PLATFORM_ID, Renderer2   } from '@angular/core';
+import { Component, AfterViewInit, Inject, PLATFORM_ID, Renderer2 } from '@angular/core';
 import { isPlatformBrowser, NgForOf } from '@angular/common';
-import  $ from 'jquery';
+import Swiper from 'swiper';
+
 
 @Component({
   selector: 'app-main',
@@ -17,19 +18,42 @@ export class MainComponent {
     { img: 'https://gcf.mx/assets/images/slide1.png' }
   ];
   totalSlides = this.slides.length;
-   
+
   // Define la propiedad 'dots'
   dots: number[] = Array(this.totalSlides).fill(0).map((_, i) => i);
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
 
   ngAfterViewInit() {
     // Verificar si estamos en el navegador
-   
+    if (typeof window !== 'undefined') {
+      new Swiper('.card__content', {
+        loop: true,
+        spaceBetween: 32,
+        grabCursor: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+          dynamicBullets: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+          600: {
+            slidesPerView: 2,
+          },
+          968: {
+            slidesPerView: 3,
+          },
+        },
+      });
+    }
 
     if (isPlatformBrowser(this.platformId)) {
 
-      
+
 
       setTimeout(() => {
         this.showSlide(this.currentIndex);
@@ -61,7 +85,7 @@ export class MainComponent {
   currentSlide(index: number): void {
     this.showSlide(index);
   }
- 
- ;
-  
+
+  ;
+
 }

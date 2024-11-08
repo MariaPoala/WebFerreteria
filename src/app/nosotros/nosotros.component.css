@@ -1,0 +1,65 @@
+
+
+.slider {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+/* Estilos para las diapositivas activas y centradas en Swiper */
+.slider .swiper-slide-active {
+  transform: scale(1.15);
+  opacity: 1;
+  background: #ff9966; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #ff5e62, #ff9966); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #ff5e62, #ff9966); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #fff;
+}
+
+/* Estilos para las tarjetas de cada diapositiva */
+.slider-card {
+  background: #fff;
+  padding: 0px;
+  margin: 50px 15px 90px 15px;
+  border-radius: 5px;
+  box-shadow: 0 15px 45px -20px rgb(0 0 0 / 73%);
+  transform: scale(0.9);
+  opacity: 0.5;
+  transition: all 0.3s;
+}
+
+/* Estilos para la imagen de cada tarjeta */
+.slider-card img {
+  border-radius: 5px 5px 0px 0px;
+}
+
+/* Botones de navegación de Swiper */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #333;
+  font-size: 30px;
+  top: calc(50% - 25px);
+  opacity: 1;
+  z-index: 1;
+}
+
+.swiper-button-prev {
+  left: 0;
+}
+
+.swiper-button-next {
+  right: 0;
+}
+
+/* Estilos para los puntos de paginación de Swiper */
+.swiper-pagination-bullet {
+  background: #ccc !important;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 3px;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: #f44336 !important;
+}
