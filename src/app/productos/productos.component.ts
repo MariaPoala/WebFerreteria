@@ -31,19 +31,14 @@ export class ProductosComponent {
     this.route.paramMap.subscribe(params => {
       const categoriaId = +params.get('id')!;
       if (categoriaId) {
-        // Buscar la categoría correspondiente y seleccionarla si existe
         this.categoriaSeleccionada = this.categorias.find(categoria => categoria.id === categoriaId);
       }
     });
   }
-
-  // Método para seleccionar una categoría y mostrar sus productos
   seleccionarCategoria(categoria: any): void {
-    // Si la categoría ya está seleccionada, la ocultamos; si no, la mostramos
     this.categoriaSeleccionada = this.categoriaSeleccionada?.id === categoria.id ? null : categoria;
   }
 
-  // Obtener los productos de la categoría seleccionada
   obtenerProductosPorCategoria(categoria: any): any[] {
     return this.productos.filter(producto => producto.categoria_id === categoria.id);
   }

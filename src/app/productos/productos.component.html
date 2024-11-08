@@ -17,13 +17,33 @@
   </div>
 
   <!-- Columna para los productos de la categoría seleccionada -->
-  <div class="col-sm-8" *ngIf="categoriaSeleccionada">
-    <h4>Productos de {{ categoriaSeleccionada.nombre }}</h4>
+  <div class="col-sm-8" >
+    <!-- <div class="col-sm-8" *ngIf="categoriaSeleccionada"> -->
+    <!-- <h4>Productos de {{ categoriaSeleccionada.nombre }}</h4>
     <ul>
       <li *ngFor="let producto of obtenerProductosPorCategoria(categoriaSeleccionada)">
         <a href="#">{{ producto.nombre }}</a>
       </li>
-    </ul>
+    </ul> -->
+
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdI5h6LZxis-xvMA-mioIFBUdBqrofceIn1A&s" class="img-thumbnail" alt="Cinque Terre">
+        </div>
+        <div class="col">
+          <h3>Producto 1</h3>
+          <p>Descripcion...</p>
+          <ul>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+          </ul>
+          <h4>S/ 50.00</h4>
+        </div>
+      </div>
   </div>
 </div>
 

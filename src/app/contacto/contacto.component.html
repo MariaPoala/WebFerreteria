@@ -1,1 +1,54 @@
-<p>contacto works!</p>
+<div class="container-fluid mapa">
+    <div class="map-responsive">
+   <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&q=Eiffel+Tower+Paris+France" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+</div>
+</div>
+
+<h2 class="h4 font-weight-bold text-center mt-4 mb-3 text-success">Contáctenos</h2>
+<p class="text-center mb-3">Estamos aquí para ayudarte. Puedes ponerte en contacto con nosotros a través de los siguientes métodos:</p>
+
+<div class="row justify-content-center mt-4 px-3">
+  <div class="col-md-5 mb-4">
+    <div class="bg-light p-4 rounded shadow-sm mb-3">
+      <h3 class="h6 font-weight-bold text-success">Dirección</h3>
+      <p class="text-muted">Av. Las Flores 123, Huancayo, Perú</p>
+    </div>
+    <div class="bg-light p-4 rounded shadow-sm mb-3">
+      <h3 class="h6 font-weight-bold text-success">Teléfono</h3>
+      <p class="text-muted">(064) 123-456</p>
+    </div>
+    <div class="bg-light p-4 rounded shadow-sm mb-3">
+      <h3 class="h6 font-weight-bold text-success">Email</h3>
+      <p class="text-muted">infoconstrarna.com</p>
+    </div>
+  </div>
+
+  <div class="col-md-5">
+    <h3 class="h6 font-weight-bold text-center text-success mb-3">Envíanos un mensaje</h3>
+    <form (ngSubmit)="enviarCorreo()">
+      <div class="form-group">
+        <label for="nombre">Nombre Completo</label>
+        <input type="text" id="nombre" [(ngModel)]="emailData.nombre" name="nombre" placeholder="Tu nombre" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" [(ngModel)]="emailData.email" name="email" placeholder="Tu email" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="telefono">Teléfono</label>
+        <input type="text" id="telefono" [(ngModel)]="emailData.telefono" name="telefono" placeholder="Tu teléfono" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="mensaje">Mensaje</label>
+        <textarea placeholder="Tu mensaje" id="message" [(ngModel)]="emailData.message" name="message" class="form-control" rows="4" required></textarea>
+      </div>
+      <div class="d-flex justify-content-between">
+        <button type="submit" class="btn btn-success font-weight-bold">
+          Enviar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+  
