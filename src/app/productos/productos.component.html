@@ -1,6 +1,9 @@
 <div class="row">
   <!-- Columna para las categorías -->
   <div class="col-sm-4">
+    <p>Filtrar por Producto:</p>
+    <input class="form-control" id="myInput" type="text" placeholder="Buscar">
+    <button> Filtrar</button>
     <div *ngFor="let categoria of categorias">
       <button class="btn btn-primary" (click)="seleccionarCategoria(categoria)">
         {{ categoria.nombre }}
@@ -9,7 +12,7 @@
         <h5>Productos de {{ categoria.nombre }}:</h5>
         <ul>
           <li *ngFor="let producto of obtenerProductosPorCategoria(categoria)">
-            <a href="#">{{ producto.nombre }}</a>
+            <a (click)="seleccionarProducto(producto)">{{ producto.nombre }}</a>
           </li>
         </ul>
       </div>
@@ -17,43 +20,34 @@
   </div>
 
   <!-- Columna para los productos de la categoría seleccionada -->
-  <div class="col-sm-8" >
-    <!-- <div class="col-sm-8" *ngIf="categoriaSeleccionada"> -->
-    <!-- <h4>Productos de {{ categoriaSeleccionada.nombre }}</h4>
-    <ul>
-      <li *ngFor="let producto of obtenerProductosPorCategoria(categoriaSeleccionada)">
-        <a href="#">{{ producto.nombre }}</a>
-      </li>
-    </ul> -->
+  <div class="col-sm-8">
+    <div *ngFor="let producto of productos">
+      <div class="col-sm-8" *ngIf="categoriaSeleccionada?.id === producto.id">
+        <h4>Productos de {{ categoriaSeleccionada.nombre }}</h4>
+        <ul>
+          <li *ngFor="let producto of obtenerProductosPorCategoria(producto)">
+            <a (click)="seleccionarProducto(producto)">{{ producto.nombre }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Columna de detalle del producto -->
 
     <div class="container">
-      <div class="row">
+      <div class="row" *ngIf="productoSeleccionado">
         <div class="col">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdI5h6LZxis-xvMA-mioIFBUdBqrofceIn1A&s" class="img-thumbnail" alt="Cinque Terre">
+          <img [src]="'assets/images/' + productoSeleccionado.imagen" class="card-img-top"
+            alt="{{ productoSeleccionado.nombre }}">
         </div>
         <div class="col">
-          <h3>Producto 1</h3>
-          <p>Descripcion...</p>
+          <h3>{{ productoSeleccionado.nombre }}</h3>
+          <p>{{ productoSeleccionado.descripcion }}</p>
           <ul>
-            <li>1</li>
-            <li>1</li>
-            <li>1</li>
-            <li>1</li>
-            <li>1</li>
+            <li *ngFor="let detalle of productoSeleccionado.detalles">{{detalle}}</li>
           </ul>
-          <h4>S/ 50.00</h4>
+          <p class="card-text"><strong>Precio:</strong> ${{ productoSeleccionado.precio }}</p>
         </div>
       </div>
-  </div>
-</div>
-
-<div class="row mt-4">
-  <div class="col-12" *ngIf="categoriaSeleccionada">
-    <h4>Productos de {{ categoriaSeleccionada?.nombre }} (segunda vista)</h4>
-    <ul>
-      <li *ngFor="let producto of obtenerProductosPorCategoria(categoriaSeleccionada)">
-        <a href="#">{{ producto.nombre }}</a>
-      </li>
-    </ul>
+    </div>
   </div>
 </div>
