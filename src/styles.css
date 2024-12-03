@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+.colorfooter, .colorheader {
+    background-color: #1B3A3A ;
+  
+  }
+
+.colorletra{
+    color:aliceblue;
+}
+  
+.colorfonfo{
+    background-color: #F5F5F5   ;
+}

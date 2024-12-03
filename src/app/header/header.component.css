@@ -1,7 +1,7 @@
 .navbar {
   font-size: 1.1rem;
   display: block;
-  background-color: #6CDDE6;
+  background-color: #4B8F8C   ;
   position: fixed;
   top: 0;
   left: 0;
@@ -10,11 +10,12 @@
 }
 
 .nav-link {
-  color: rgb(204, 58, 58) !important;
+  color: #ffffff !important;
+  
 }
 
 .nav-link:hover {
-  color: #e28a88 !important;
+  color: #A1B5B5  !important;
   /* Cambia el color al pasar el cursor */
 }
 
@@ -25,7 +26,7 @@
   /* Ancho de 80 píxeles */
   height: 200px;
   /* Alto de 20 píxeles */
-  background-color: blue;
+  background-color: white;
   /* Color de fondo azul */
   left: 50%;
   /* Posicionar el menú a la mitad del contenedor */
@@ -47,13 +48,12 @@
 }
 
 .custom-div {
-  width: 100%;
-  /* Ancho de 10 píxeles */
+
+    /* Ancho de 10 píxeles */
   height: 30px;
-  /* Altura completa de la ventana */
-  background-color: #6CDDE6;
+
   /* Color de fondo azul */
-  position: fixed;
+  
   /* Posición fija para que abarque toda la altura */
 
   /* Espaciado interno */
