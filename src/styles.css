@@ -10,3 +10,9 @@
 .colorfonfo{
     background-color: #F5F5F5   ;
 }
+
+.icon {
+    color: white; /* Cambia el color del trazo del icono a blanco */
+    width: 24px; /* Tamaño opcional */
+    height: 24px; /* Tamaño opcional */
+  }

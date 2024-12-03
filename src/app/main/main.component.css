@@ -4,7 +4,7 @@
   overflow: hidden;
   position: relative;
   border-radius: 4px;
-  padding-top: 6%;
+  padding-top: 8%;
 }
 
 .slider {
@@ -131,11 +131,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+
 }
 
 .card__container {
-  padding-block: 5rem;
+  padding-block: 2rem;
 }
 
 .card__content {
@@ -147,8 +147,12 @@
 .card__article {
   width: 300px;
   /* Remove after adding swiper js */
+  height: 300px;
   border-radius: 1.25rem;
   overflow: hidden;
+  align-items: center;
+  justify-content: center; 
+  place-items: center;
 }
 
 .card__image {
@@ -165,10 +169,12 @@
   text-align: center;
   position: relative;
   z-index: 10;
+  height: 20%;
 }
 
 .card__img {
   width: 180px;
+  height: 180px;
   margin: 0 auto;
   position: relative;
   z-index: 5;
@@ -201,9 +207,11 @@
 .card__button {
   display: inline-block;
   background-color: var(--first-color);
-  padding: .75rem 1.5rem;
   border-radius: .25rem;
-  color: var(--dark-color);
+  color: #276759;
+  text-decoration: double;
+  background-color: #6db083;
+  height: 20px;
   font-weight: 600;
 }
 
@@ -262,7 +270,8 @@
 /* For large devices */
 @media screen and (min-width: 1120px) {
   .card__container {
-    max-width: 1120px;
+    margin-left: 2%;
+    margin-right: 2%;
   }
 
   .swiper-button-prev {
@@ -273,6 +282,7 @@
     right: -1rem;
   }
 }
+
 .bienvenida {
   display: flex;
   flex-direction: column;
@@ -280,13 +290,15 @@
   justify-content: center;
 }
 
-.bienvenida h2, .bienvenida p {
+.bienvenida h2,
+.bienvenida p {
   margin: 10px 0;
 }
 
 .button-container {
   display: flex;
-  gap: 10px; /* Espacio entre los botones */
+  gap: 10px;
+  margin-top: 12px;
 }
 
 .btn {
@@ -308,7 +320,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 80px;
   font-size: 20px;
   font-weight: bold;
   color: #333;
@@ -330,17 +342,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: aqua;
-  
+
 }
 
 .relative {
   width: 100%;
-  max-width: 80%; /* Ajusta el ancho máximo según prefieras */
+  max-width: 80%;
+  /* Ajusta el ancho máximo según prefieras */
 }
 
 .cat-nav-button {
-  background-color: #6c2222;
+  background-color: #1B3A3A;
   border: none;
   border-radius: 50%;
   padding: 10px;
@@ -371,7 +383,8 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 180px; /* Ancho máximo para cada tarjeta */
+  max-width: 180px;
+  /* Ancho máximo para cada tarjeta */
 }
 
 .text-lg {
@@ -381,4 +394,9 @@
 
 .text-gray-600 {
   color: #4a4a4a;
+}
+
+.descripcionferre{
+  width: 1000px;
+  text-align: justify;
 }

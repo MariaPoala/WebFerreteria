@@ -13,95 +13,21 @@
 <section class="container">
    <div class="card__container swiper">
       <div class="card__content">
-         <div class="swiper-wrapper">
-            <article class="card__article swiper-slide">
+         <div  class="swiper-wrapper">
+            <article *ngFor="let prod of producto" class="card__article swiper-slide">
                <div class="card__image">
-                  <img src="https://belzarsac.com/wp/wp-content/uploads/2023/06/ferreteria.jpg" alt="image"
+                  <img src={{prod.imagen}} alt="image"
                      class="card__img">
                   <div class="card__shadow"></div>
                </div>
 
                <div class="card__data">
-                  <h3 class="card__name">Kell Dawx</h3>
-                  <p class="card__description">
-                     Passionate about development and design,
-                     I carry out projects at the request of users.
-                  </p>
-
-                  <a href="#" class="card__button">View More</a>
+                  <h3 class="card__name">{{prod.nombre}}</h3>
+                  <!-- <p class="card__description">
+                     {{prod.descripcion}}
+                  </p> -->               
                </div>
-            </article>
-
-            <article class="card__article swiper-slide">
-               <div class="card__image">
-                  <img src="https://belzarsac.com/wp/wp-content/uploads/2023/06/ferreteria.jpg" alt="image"
-                     class="card__img">
-                  <div class="card__shadow"></div>
-               </div>
-
-               <div class="card__data">
-                  <h3 class="card__name">Lotw Fox</h3>
-                  <p class="card__description">
-                     Passionate about development and design,
-                     I carry out projects at the request of users.
-                  </p>
-
-                  <a href="#" class="card__button">View More</a>
-               </div>
-            </article>
-
-            <article class="card__article swiper-slide">
-               <div class="card__image">
-                  <img src="https://belzarsac.com/wp/wp-content/uploads/2023/06/ferreteria.jpg" alt="image"
-                     class="card__img">
-                  <div class="card__shadow"></div>
-               </div>
-
-               <div class="card__data">
-                  <h3 class="card__name">Sara Mit</h3>
-                  <p class="card__description">
-                     Passionate about development and design,
-                     I carry out projects at the request of users.
-                  </p>
-
-                  <a href="#" class="card__button">View More</a>
-               </div>
-            </article>
-
-            <article class="card__article swiper-slide">
-               <div class="card__image">
-                  <img src="https://belzarsac.com/wp/wp-content/uploads/2023/06/ferreteria.jpg" alt="image"
-                     class="card__img">
-                  <div class="card__shadow"></div>
-               </div>
-
-               <div class="card__data">
-                  <h3 class="card__name">Jenny Wert</h3>
-                  <p class="card__description">
-                     Passionate about development and design,
-                     I carry out projects at the request of users.
-                  </p>
-
-                  <a href="#" class="card__button">View More</a>
-               </div>
-            </article>
-
-            <article class="card__article swiper-slide">
-               <div class="card__image">
-                  <img src="https://belzarsac.com/wp/wp-content/uploads/2023/06/ferreteria.jpg" alt="image"
-                     class="card__img">
-                  <div class="card__shadow"></div>
-               </div>
-
-               <div class="card__data">
-                  <h3 class="card__name">Lexa Kin</h3>
-                  <p class="card__description">
-                     Passionate about development and design,
-                     I carry out projects at the request of users.
-                  </p>
-
-                  <a href="#" class="card__button">View More</a>
-               </div>
+               <div> <a href="#" class="card__button">Ver mas</a></div>
             </article>
          </div>
       </div>
@@ -122,10 +48,14 @@
 
 <div class="bienvenida">
    <h2>Bienvenidos</h2>
-   <p>Descripción</p>
+   <p class="descripcionferre">Ferrecats es una ferretería que ofrece una amplia gama de productos y herramientas esenciales para proyectos de construcción, reparación y mantenimiento. Su catálogo abarca desde herramientas manuales y eléctricas hasta materiales de construcción y accesorios, diseñados para satisfacer las necesidades tanto de profesionales como de aficionados al bricolaje. Además, Ferrecats se distingue por su atención personalizada y su compromiso con la calidad de sus productos.</p>
    <div class="button-container">
-      <button class="btn">Botón 1</button>
-      <button class="btn">Botón 2</button>
+      <button class="btn"> <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+         <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+       </svg>Nosotros</button>
+      <button class="btn">Productos <svg xmlns="http://www.w3.org/2000/svg" width="24" height="28" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+         <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+       </svg></button>
    </div>
 </div>
 
@@ -144,9 +74,9 @@
 
    <div class="relative w-full">
       <div class="cat-cards-container flex justify-center items-center gap-4">
-         <div *ngFor="let card of getVisibleCards()" class="cat-card bg-white p-4 rounded-lg shadow-md w-1/3">
-            <h2 class="text-lg font-bold mb-2">{{ card.title }}</h2>
-            <p class="text-gray-600">{{ card.description }}</p>
+         <div *ngFor="let cate of getVisibleCards()" class="cat-card bg-white p-4 rounded-lg shadow-md w-1/3">
+            <h2 class="text-lg font-bold mb-2">{{ cate.nombre }}</h2>
+            <p class="text-gray-600">{{ cate.descripcion }}</p>
          </div>
       </div>
    </div>
@@ -155,6 +85,7 @@
    <button class="cat-nav-button right" (click)="handleNext()">
       <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
          <path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
+       </svg>
+       
    </button>
 </div>

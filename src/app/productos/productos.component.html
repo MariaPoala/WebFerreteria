@@ -6,6 +6,7 @@
     <input class="form-control" [(ngModel)]="searchText" type="text" placeholder="Buscar"
       (input)="filtrarProductos()" />
     <!-- Lista de productos filtrados -->
+
     <div *ngIf="searchText && productosFiltrados.length > 0" class="search-results">
       <ul>
         <li *ngFor="let producto of productosFiltrados" (click)="seleccionarProducto(producto)">

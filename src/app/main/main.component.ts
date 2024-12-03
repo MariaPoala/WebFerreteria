@@ -1,6 +1,9 @@
 import { Component, AfterViewInit, Inject, PLATFORM_ID, Renderer2 } from '@angular/core';
 import { isPlatformBrowser, NgForOf } from '@angular/common';
 import Swiper from 'swiper';
+import { ProductosService } from '../productos.service';
+import { CategoriaComponent } from '../categoria/categoria.component';
+import { CategoriaService } from '../categoria.service';
 
 interface Card {
   id: number;
@@ -16,6 +19,8 @@ interface Card {
   styleUrls: ['./main.component.css']
 })
 export class MainComponent {
+  producto: any[]=[];
+  categoria: any[]=[];
   currentIndex = 0;
   slides = [
     { img: 'https://d100mj7v0l85u5.cloudfront.net/s3fs-public/2023-04/funciones-del-jefe-de-compras-6.png' },
@@ -27,14 +32,17 @@ export class MainComponent {
   // Define la propiedad 'dots'
   dots: number[] = Array(this.totalSlides).fill(0).map((_, i) => i);
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
-
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, private productosService:ProductosService, private categoriaService:CategoriaService) { }
+  ngOnInit() {
+    this.producto = this.productosService.getProductos();
+    this.categoria = this.categoriaService.getCategorias();
+  }
   ngAfterViewInit() {
     // Verificar si estamos en el navegador
     if (typeof window !== 'undefined') {
       new Swiper('.card__content', {
         loop: true,
-        spaceBetween: 32,
+        spaceBetween: 10,
         grabCursor: true,
         pagination: {
           el: '.swiper-pagination',
@@ -50,7 +58,7 @@ export class MainComponent {
             slidesPerView: 2,
           },
           968: {
-            slidesPerView: 3,
+            slidesPerView: 5,
           },
         },
       });
@@ -106,14 +114,16 @@ export class MainComponent {
   currentIndexcat = 0;
 
   handleNext() {
-    this.currentIndexcat = (this.currentIndexcat + 1) % this.cards.length;
+    this.currentIndexcat = (this.currentIndexcat + 1) % this.categoria.length;
   }
 
   handlePrev() {
-    this.currentIndexcat = (this.currentIndexcat - 1 + this.cards.length) % this.cards.length;
+    this.currentIndexcat = (this.currentIndexcat - 1 + this.categoria.length) % this.categoria.length;
   }
 
   getVisibleCards() {
-    return this.cards.slice(this.currentIndexcat, this.currentIndexcat + 4);
+    return this.categoria.slice(this.currentIndexcat, this.currentIndexcat + 6);
   }
+
+
 }
