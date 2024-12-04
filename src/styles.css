@@ -1,5 +1,5 @@
 .colorfooter, .colorheader {
-    background-color: #1B3A3A ;
+    background-color: #162e44 ;
   
   }
 
@@ -12,7 +12,7 @@
 }
 
 .icon {
-    color: white; /* Cambia el color del trazo del icono a blanco */
+    color: #01b3a7; /* Cambia el color del trazo del icono a blanco */
     width: 24px; /* Tamaño opcional */
-    height: 24px; /* Tamaño opcional */
+    height: 24px; /* Tamaño opcional */   
   }

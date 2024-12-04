@@ -1,7 +1,7 @@
 .navbar {
   font-size: 1.1rem;
   display: block;
-  background-color: #4B8F8C   ;
+  background-color: #162e44   ;
   position: fixed;
   top: 0;
   left: 0;
@@ -11,11 +11,13 @@
 
 .nav-link {
   color: #ffffff !important;
+
   
 }
 
 .nav-link:hover {
   color: #A1B5B5  !important;
+  border-top: #01b3a7;
   /* Cambia el color al pasar el cursor */
 }
 
@@ -49,33 +51,22 @@
 
 .custom-div {
 
-    /* Ancho de 10 píxeles */
-  height: 30px;
-
-  /* Color de fondo azul */
-  
-  /* Posición fija para que abarque toda la altura */
-
-  /* Espaciado interno */
-
-  /* Usar flexbox para la alineación */
+  height: 26px;
   justify-content: center;
-  /* Centrar el contenido horizontalmente */
   align-items: center;
-  /* Centrar el contenido verticalmente */
-
+margin-bottom: 10px;
 }
 
 .custom-div a {
-  margin: 0 10px;
-  /* Espacio entre los enlaces */
+  margin: 0 20px;
+  color: #01b3a7;
+  font-size: medium;
+  
 }
 
 .separator {
-  border-top: 1px solid #000;
-  /* Línea de separación */
+  border-top: 1px solid #ced4da;
   margin: 0;
-  /* Sin margen */
 }
 
 .navbar {
@@ -84,7 +75,7 @@
 }
 
 .contenedor_principal {
-  padding-top: 30px;
+  padding-top: 10px;
   width: 100%;
   display: block;
   /* Hacer que el contenedor no use flex */

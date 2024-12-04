@@ -208,13 +208,19 @@
   display: inline-block;
   background-color: var(--first-color);
   border-radius: .25rem;
-  color: #276759;
+  color: #ffffff;
   text-decoration: double;
-  background-color: #6db083;
-  height: 20px;
+  background-color: #01b3a7;
+  width: 70px;
+  height: 26px;
   font-weight: 600;
+  margin-top: 10px;
+  text-align: center;
 }
-
+.card__button:hover {
+  /* color: #A1B5B5  !important; */
+  background-color: #20c997;
+}
 /* Swiper class */
 .swiper-button-prev:after,
 .swiper-button-next:after {
@@ -288,6 +294,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  color: #162e44;
 }
 
 .bienvenida h2,
@@ -303,7 +310,7 @@
 
 .btn {
   padding: 10px 20px;
-  background-color: #007BFF;
+  background-color: #01b3a7;
   color: white;
   border: none;
   border-radius: 5px;
@@ -312,7 +319,7 @@
 }
 
 .btn:hover {
-  background-color: #0056b3;
+  background-color: #20c997;
 }
 
 /* Estilos para el apartado de categoría */
@@ -323,14 +330,14 @@
   margin-top: 80px;
   font-size: 20px;
   font-weight: bold;
-  color: #333;
+  color: #162e44;
 }
 
 .categoria::before,
 .categoria::after {
   content: "";
   flex: 1;
-  border-top: 2px solid #333;
+  border-top: 4px solid #ced4da;
   margin: 0 15px;
 }
 
@@ -352,7 +359,8 @@
 }
 
 .cat-nav-button {
-  background-color: #1B3A3A;
+  background-color: #162e44;
+  color: #20c997;
   border: none;
   border-radius: 50%;
   padding: 10px;
@@ -361,10 +369,11 @@
 }
 
 .cat-nav-button:hover {
-  background-color: #973d3d;
+  color:#ffffff;
+  background-color: #20c997;
 }
 
-.icon {
+.icons {
   width: 24px;
   height: 24px;
   stroke-width: 2;
@@ -384,7 +393,6 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 180px;
-  /* Ancho máximo para cada tarjeta */
 }
 
 .text-lg {
@@ -399,4 +407,8 @@
 .descripcionferre{
   width: 1000px;
   text-align: justify;
+}
+
+.p{
+font-family: font-sans;
 }
