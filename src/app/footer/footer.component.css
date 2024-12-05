@@ -12,13 +12,58 @@
 }
 
 .container{
-    padding-top: 3%;
+    padding-top: 1%;
+    text-align: justify;
+    font-size: 15px;
+    font-weight: 300;
+    font-family: "Montserrat", sans-serif;
 }
-.row{
-    padding-bottom: 3%;
+.pierow{
+    padding-bottom: 1%;
+    padding-top: 1%;
+    color: rgba(255, 255, 255, 0.3);    
 }
+.pierow svg {
+    margin: 0 20px;
+    font-size: medium;
+    
+  }
 .pie{
     background-color: #11263a;
     color:#dee2e6;
     align-items: cen;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Montserrat", sans-serif;
 }
+
+/* categoria  */
+.categorias-scroll {
+    max-height: 200px; /* Ajusta según la altura de cada categoría (aproximadamente 6 elementos visibles) */
+    overflow-y: auto; /* Activa el scroll vertical */
+    padding: 0; /* Elimina padding innecesario del <ul> */
+    margin: 0; /* Elimina margen predeterminado del <ul> */
+}
+
+.categorias-scroll li {
+    padding: 5px; /* Espaciado interno para cada categoría */
+}
+
+.categorias-scroll li:last-child {
+    border-bottom: none; /* Quita la línea del último elemento */
+}
+
+.categorias-scroll a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: inherit; /* Usa el color definido por la clase principal */
+}
+
+.categorias-scroll a:hover {
+    color: #01b3a7; /* Cambia el color al pasar el mouse */
+}
+
+/* contacto */
+.contacto svg{
+    color: #01b3a7;
+}
+

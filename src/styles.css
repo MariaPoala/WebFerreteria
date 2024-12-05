@@ -1,18 +1,30 @@
-.colorfooter, .colorheader {
-    background-color: #162e44 ;
-  
-  }
+.colorfooter,
+.colorheader {
+  background-color: #162e44;
 
-.colorletra{
-    color:aliceblue;
 }
-  
-.colorfonfo{
-    background-color: #F5F5F5   ;
+
+.colorletra {
+  color: aliceblue;
+}
+
+.colorfonfo {
+  background-color: #F5F5F5;
 }
 
 .icon {
-    color: #01b3a7; /* Cambia el color del trazo del icono a blanco */
-    width: 24px; /* Tamaño opcional */
-    height: 24px; /* Tamaño opcional */   
-  }
+  color: #01b3a7;
+  /* Cambia el color del trazo del icono a blanco */
+  width: 24px;
+  /* Tamaño opcional */
+  height: 24px;
+  /* Tamaño opcional */
+}
+
+h2 {
+  color: #01b3a7 !important;
+}
+
+p {
+text-align: justify;
+}

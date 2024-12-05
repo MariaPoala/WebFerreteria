@@ -1,16 +1,31 @@
-.map-responsive{
-    overflow:hidden;
-    padding-bottom:50%;
-    position:relative;
-    height:0;
-}
-.map-responsive iframe{
-    justify-items: center;
-    height:40%;
-    width:80%;
-    position:absolute;
+.map-responsive {
+    overflow: hidden;
+    padding-bottom: 50%;
+    position: relative;
+    height: 0;
 }
 
-.mapa{
-    padding-top: 10%;
+.map-responsive iframe {
+    justify-items: center;
+    height: 50%;
+    width: 100%;
+    position: absolute;
+}
+
+.mapa {
+    padding-top: 6%;
+}
+
+.contacto {
+    background-color: aqua;
+    margin-left: 15%;
+}
+
+.correo {
+    background-color: aqua;
+    margin-right: 15%;
+}
+
+.form-group {
+    margin-left: 10%;
 }

@@ -15,7 +15,8 @@ export class FooterComponent {
   constructor(private categoriaService: CategoriaService) {}
 
   ngOnInit() {
-    this.categorias = this.categoriaService.getCategorias().slice(0, 6);
+    // this.categorias = this.categoriaService.getCategorias().slice(0, 6);
+    this.categorias = this.categoriaService.getCategorias();
   }
 
 }

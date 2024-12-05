@@ -1,4 +1,4 @@
-.container{
+.container {
   padding-top: 10%;
 }
 
@@ -6,16 +6,69 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
-  font-size: 20px;
-  font-weight: bold;
-  color: #333;
+  margin-top: 6%; 
 }
 
 .valores::before,
 .valores::after {
   content: "";
   flex: 1;
-  border-top: 2px solid #333;
+  border-top: 4px solid #ced4da;
   margin: 0 15px;
+}
+
+.media {
+  
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.container-valores {
+  padding-top: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.rowval2 {
+  padding-top: 5%;
+  margin-bottom: 10%;
+}
+/* Quienes somos */
+.imgdetalle {
+  width: 800px;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* vision y mision */
+.vimi {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  padding-top: 30px;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.imgvimi {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.mision {
+  background: linear-gradient(to right, rgba(1, 179, 167, 0.1), rgba(1, 179, 167, 0.3));
+  height: 250px;
+}
+
+.vision {
+  background: linear-gradient(to right, rgba(1, 179, 167, 0.3), rgba(1, 179, 167, 0.1));
+  height: 250px;
 }
