@@ -6,90 +6,99 @@
   </div>
 </div>
 
-<h2 class="h4 font-weight-bold text-center mt-4 mb-3 text-success">Contáctenos</h2>
+<!-- <h2 class="h4 font-weight-bold text-center mt-4 mb-3 text-success">Contáctenos</h2>
 <p class="text-center mb-3">Estamos aquí para ayudarte. Puedes ponerte en contacto con nosotros a través de los
-  siguientes métodos:</p>
+  siguientes métodos:</p> -->
 
-<div class="row justify-content-center mt-4 px-3">
+<div class="row justify-content-center  ">
   <!-- Datos de contacto -->
-  <div class="col-md-5 mb-4">
-    <div class="contacto">
-      <div class="bg-light p-4 rounded shadow-sm mb-3">
+  <div class="col-md-5  contacto">
+    <div>
+      <h2>Contáctanos</h2>
+      <div class="cajainfo rounded shadow-sm mb-3">
         <h3 class="h6 font-weight-bold text-success">Dirección</h3>
         <p class="text-muted">Av. Las Flores 123, Huancayo, Perú</p>
       </div>
-      <div class="bg-light p-4 rounded shadow-sm mb-3">
+      <div class="separator"></div> <!-- Separador -->
+  
+      <div class="cajainfo rounded shadow-sm mb-3">
         <h3 class="h6 font-weight-bold text-success">Teléfono</h3>
         <p class="text-muted">(064) 123-456</p>
       </div>
-      <div class="bg-light p-4 rounded shadow-sm mb-3">
+      <div class="separator"></div> <!-- Separador -->
+  
+      <div class="cajainfo rounded shadow-sm mb-3">
         <h3 class="h6 font-weight-bold text-success">Email</h3>
         <p class="text-muted">infoconstrarna.com</p>
       </div>
-      <div class="bg-light p-4 rounded shadow-sm mb-3">
+      <div class="separator"></div> <!-- Separador -->
+  
+      <div class="cajainfo rounded shadow-sm mb-3">
         <h3 class="h6 font-weight-bold text-success">Teléfono</h3>
         <p class="text-muted">(064) 123-456</p>
       </div>
-      <div class="bg-light p-4 rounded shadow-sm mb-3">
+      <div class="separator"></div> <!-- Separador -->
+  
+      <div class="cajainfo rounded shadow-sm mb-3">
         <h3 class="h6 font-weight-bold text-success">Email</h3>
         <p class="text-muted">infoconstrarna.com</p>
       </div>
     </div>
   </div>
+  
 
   <!-- Formulario de mensaje -->
-  <div class="col-md-7">
-    <div class="correo">
-      <h3 class="h6 font-weight-bold text-center text-success mb-3">Envíanos un mensaje</h3>
-      <form (ngSubmit)="enviarCorreo()">
+  <div class="col-md-7 correo">
 
-        <div class="row mb-3 cajas">
-          <div class="col-12 col-md-6 form-group ">
-            <label for="nombre">Nombres</label>
-            <input type="text" id="nombre" [(ngModel)]="emailData.nombre" name="nombre" placeholder="Tu nombre"
-              class="form-control form-control-sm " required>
-          </div>
+    <h2 class="">Envianos un mensaje</h2>
+    <form (ngSubmit)="enviarCorreo()">
 
-          <div class="col-12 col-md-6 form-group">
-            <label for="apellidos">Apellidos</label>
-            <input type="text" id="apellidos" [(ngModel)]="emailData.nombre" name="apellidos" placeholder="Tu apellido"
-              class="form-control form-control-sm " required>
-          </div>
+      <div class="row mb-3 cajas">
+        <div class="col-12 col-md-6 form-group ">
+          <label for="nombre">Nombres</label>
+          <input type="text" id="nombre" [(ngModel)]="emailData.nombre" name="nombre" placeholder="Apellidos"
+            class="form-control form-control-sm " required>
         </div>
 
-        <div class="row mb-3 cajas">
-          <div class="col-12 col-md-6 form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" [(ngModel)]="emailData.email" name="email" placeholder="Tu email"
-              class="form-control form-control-sm " required>
-          </div>
+        <div class="col-12 col-md-6 form-group">
+          <label for="apellidos">Apellidos</label>
+          <input type="text" id="email" [(ngModel)]="emailData.nombre" name="email" placeholder="Apellidos"
+            class="form-control form-control-sm " required>
+        </div>
+      </div>
 
-          <div class="col-12 col-md-6 form-group">
-            <label for="telefono">Teléfono</label>
-            <input type="text" id="telefono" [(ngModel)]="emailData.telefono" name="telefono" placeholder="Tu teléfono"
-              class="form-control form-control-sm " required>
-          </div>
+      <div class="row mb-3 cajas">
+        <div class="col-12 col-md-6 form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" [(ngModel)]="emailData.email" name="email"
+            class="form-control form-control-sm " required>
         </div>
 
-        <div class="form-group mb-3 cajas">
-          <label for="mensaje">Mensaje</label>
-          <textarea placeholder="Tu mensaje" id="mensaje" [(ngModel)]="emailData.message" name="message"
-            class="form-control form-control-sm " rows="4" required></textarea>
+        <div class="col-12 col-md-6 form-group">
+          <label for="telefono">Teléfono</label>
+          <input type="text" id="telefono" [(ngModel)]="emailData.telefono" name="telefono" placeholder="Tu teléfono"
+            class="form-control form-control-sm " required>
         </div>
+      </div>
 
-        <div class="row cajas">
-          <div class="col-12 col-md-6 form-group">
-            <button type="submit" class="btn btn-success font-weight-bold w-100">
-              Enviar
-            </button>
-          </div>
-          <div class="col-12 col-md-6 form-group">
-            <button type="reset" class="btn btn-danger font-weight-bold w-100">
-              Limpiar formulario
-            </button>
-          </div>
+      <div class="form-group mb-3 cajas">
+        <label for="mensaje">Mensaje</label>
+        <textarea placeholder="Tu mensaje" id="mensaje" [(ngModel)]="emailData.message" name="message"
+          class="form-control form-control-sm " rows="4" required></textarea>
+      </div>
+
+      <div class="row cajas">
+        <div class="col-12 col-md-6 form-group">
+          <button type="submit" class="btn btn-success btnEnviar font-weight-bold w-100">
+            Enviar
+          </button>
         </div>
-      </form>
-    </div>
+        <div class="col-12 col-md-6 form-group ">
+          <button type="reset" class="btn btn-danger font-weight-bold w-100">
+            Limpiar formulario
+          </button>
+        </div>
+      </div>
+    </form>
   </div>
 </div>

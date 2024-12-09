@@ -1,8 +1,7 @@
 .border-end {
-    border-right: 1px solid #dee2e6; /* Color del borde */
+    border-right: 1px solid #dee2e6; 
 }
 
-/* Eliminar borde derecho de la última columna */
 .col-md-3:last-child {
     border-right: none;
 }

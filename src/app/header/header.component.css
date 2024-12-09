@@ -25,28 +25,19 @@
 
 .dropdown-menu {
   width: 900px;
-  /* Ancho de 80 píxeles */
   height: 200px;
-  /* Alto de 20 píxeles */
   background-color: white;
-  /* Color de fondo azul */
   left: 50%;
-  /* Posicionar el menú a la mitad del contenedor */
   transform: translateX(-50%);
-  /* Desplazar el menú hacia la izquierda por la mitad de su ancho */
   text-align: center;
-  /* Centrar el texto dentro del menú */
 }
 
 .dropdown-item {
   color: white;
-  /* Color del texto en blanco para contraste */
 }
 
-/* Opcional: Ajustar el padding para que el contenido se vea bien */
 .dropdown-item {
   padding: 5px 10px;
-  /* Ajusta el padding según sea necesario */
 }
 
 .custom-div {

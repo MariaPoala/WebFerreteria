@@ -14,11 +14,8 @@
 
 .icon {
   color: #01b3a7;
-  /* Cambia el color del trazo del icono a blanco */
   width: 24px;
-  /* Tamaño opcional */
   height: 24px;
-  /* Tamaño opcional */
 }
 
 h2 {
@@ -27,4 +24,8 @@ h2 {
 
 p {
 text-align: justify;
+}
+
+input::placeholder {
+  color: rgb(136, 17, 17); 
 }
